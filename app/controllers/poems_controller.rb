@@ -5,7 +5,7 @@ class PoemsController < ApplicationController
   # GET /poems.json
   def index
     @poems = Poem.all
-    # render json: @poems
+    render json: @poems
   end
 
   # GET /poems/1
@@ -27,7 +27,7 @@ class PoemsController < ApplicationController
   # POST /poems.json
   def create
     @poem = Poem.new(poem_params)
-    
+
     respond_to do |format|
       if @poem.save
         format.html { redirect_to @poem, notice: 'Poem was successfully created.' }
